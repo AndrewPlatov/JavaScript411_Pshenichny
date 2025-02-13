@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link href="style.css" rel="stylesheet">
     <script src="code.js"></script>
-    <title>Document</title>
+    <title>Квадратик</title>
 </head>
 <body>
-    <p>Square</p>
+    <p>Перед нами квадратик. При нажатии на него мышью он поменяет цвет</p>
     <div id="kvadrat"></div>
+    <!-- По id автоматически создастся переменная,
+         если он может быть именем переменной.
+         Разумеется, если id="123-45", то переменная не создастся -->
+    <input type="button" id="btn" value="Просто кнопочка">
+    <input type="number" placeholder="Красный" id="red_color">
 </body>
 </html>
 
