@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <form id="anq"> <!-- Форма - контейнер для полей ввода - инпутов -->
+        <!-- Спросим имя и фамилию -->
+        Имя: <input type="text" placeholder="Имя"> <!-- по умолчанию type="text" -->
+        Фамилия: <input type="text" placeholder="Фамилия">
+        Дата рождения: <input type="date">
+        Пол Ж: <input name="gender" value="female" type="radio" onchange="colorize()">
+        Пол М: <input name="gender" value="male" type="radio" onchange="colorize()">
+    
+    </form>
+</body>
+</html>
