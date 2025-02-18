@@ -19,3 +19,6 @@ document.getElementById('changeColor').addEventListener('click', function() {
 function isColor(value) {
     return value >= 0 && value <= 255;
 }
+
+// И из чисто теоретического интереса: возможно ли применение той функции случайного числа?
+// Например, если я хочу чтобы три числа выпадали на рандоме.
