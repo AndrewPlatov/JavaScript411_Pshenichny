@@ -12,10 +12,12 @@
         <!-- Спросим имя и фамилию -->
         Имя: <input type="text" placeholder="Имя"> <!-- по умолчанию type="text" -->
         Фамилия: <input type="text" placeholder="Фамилия">
-        Дата рождения: <input type="date">
-        Пол Ж: <input name="gender" value="female" type="radio" onchange="colorize()">
-        Пол М: <input name="gender" value="male" type="radio" onchange="colorize()">
-    
+        Дата рождения: <input type="date" id="birth" onchange="calculateAge()">
+        <fieldset>
+            <legend>Пол</legend>
+            <label for="female">Женщина:</label> <input id="female" name="gender" value="female" type="radio" onchange="colorize()">
+            <label for="male">Мужчина:</label> <input id="male" name="gender" value="male" type="radio" onchange="colorize()">
+        </fieldset>
     </form>
 </body>
 </html>
