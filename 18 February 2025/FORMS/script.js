@@ -1,8 +1,10 @@
 function colorize() {
     if (anq.gender.value == "female") {
         anq.style.backgroundColor = "#FFAB90"
-    } else {
+    } else if (anq.gender.value == "male") {
         anq.style.backgroundColor = "#90ABFF"
+    } else {
+        anq.style.backgroundColor = "#39a845"
     }
 }
 

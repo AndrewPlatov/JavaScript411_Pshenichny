@@ -12,11 +12,20 @@
         <!-- Спросим имя и фамилию -->
         Имя: <input type="text" placeholder="Имя"> <!-- по умолчанию type="text" -->
         Фамилия: <input type="text" placeholder="Фамилия">
-        Дата рождения: <input type="date" id="birth" onchange="calculateAge()">
+        <!-- Дата рождения: <input type="date" id="birth" onchange="calculateAge()" oninput="calculateAge()"> -->
+
+        Дата рождения: <input type="text" id="birth" placeholder="Год (4 цифры)" maxlength="4">
+        <button type="button" onclick="calculateAge()">Посчитать возраст</button>
+        
+
+
         <fieldset>
             <legend>Пол</legend>
             <label for="female">Женщина:</label> <input id="female" name="gender" value="female" type="radio" onchange="colorize()">
             <label for="male">Мужчина:</label> <input id="male" name="gender" value="male" type="radio" onchange="colorize()">
+
+            <label for="male">Рептилоид:</label> <input id="reptile" name="gender" value="reptile" type="radio" onchange="colorize()">
+
         </fieldset>
     </form>
 </body>
