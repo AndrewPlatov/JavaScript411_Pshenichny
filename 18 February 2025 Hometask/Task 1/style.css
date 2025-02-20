@@ -1,0 +1,26 @@
+form {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: lightcyan;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 20px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="radio"] {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+

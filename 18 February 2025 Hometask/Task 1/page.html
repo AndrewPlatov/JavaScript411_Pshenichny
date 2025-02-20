@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма должна формировать поздравление с днем рождения.</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <form id="anq">
+        Имя: <input type="text" id="name" placeholder="Имя" required>
+        Фамилия: <input type="text" id="surname" placeholder="Фамилия" required>
+        Год рождения: <input type="text" id="year" placeholder="Год (4 цифры)" maxlength="4" required>
+        <button type="button" onclick="BirthdayGreeting()">Поздравить</button>
+</body>
+</html>

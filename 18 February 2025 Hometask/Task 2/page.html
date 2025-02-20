@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сделать страницу регистрации пассажиров</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Регистрация пассажиров</h1>
+    <form id="registrationForm">
+        <fieldset>
+            <legend>Маршрут</legend>
+            <label for="from">Откуда:</label>
+            <input type="text" id="from" placeholder="Город отправления" required>
+            <label for="to">Куда:</label>
+            <input type="text" id="to" placeholder="Город назначения" required>
+            <label for="date">Дата:</label>
+            <input type="date" id="date" required>
+            <label for="time">Время:</label>
+            <input type="time" id="time" required>
+        </fieldset>
+
+        <fieldset id="passengerFields">
+            <legend>Пассажиры</legend>
+            <div class="passenger">
+                <label for="name">Имя:</label>
+                <input type="text" class="name" placeholder="Имя" required>
+                <label for="surname">Фамилия:</label>
+                <input type="text" class="surname" placeholder="Фамилия" required>
+                <label for="passport">Паспорт:</label>
+                <input type="text" class="passport" placeholder="Номер паспорта" required>
+                <label for="carriage">Вагон:</label>
+                <input type="text" class="carriage" placeholder="Номер вагона" required>
+                <label for="seat">Место:</label>
+                <input type="text" class="seat" placeholder="Номер места" required>
+                <label for="withBed">С бельём:</label>
+                <input type="checkbox" class="withBed" onchange="updateTotal()">
+            </div>
+        </fieldset>
+
+        <button type="button" onclick="addPassenger()">Добавить участника</button>
+        <h2>Общая стоимость: <span id="totalCost">0</span> руб.</h2>
+        <button type="submit">Зарегистрировать</button>
+    </form>
+</body>
+</html>
