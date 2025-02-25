@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>В форме имя, фамилия, год рождения, сегодняшнее число.
+        Все поля заполнены по умолчанию, но значение можно поменять.
+        перехватить и остановить событие submit, в форме должна быть кнопка, форма со страницы
+        должна пропасть (уничтожитья или спрятаться - решать вам) и должен появиться отчет в текстовом виде:
+        
+        Я - Алиса Селезнева
+        В 3638 году мне будет 28 лет
+        Расчет произведен 20 февраля 2025 года в 22:06 </title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Форма для ввода данных</h1>
+    <form id="userForm">
+        <label for="firstName">Имя:</label>
+        <input type="text" id="firstName" value="Алиса">
+        
+        <br><br>
+
+        <label for="lastName">Фамилия:</label>
+        <input type="text" id="lastName" value="Селезнева">
+        
+        <br><br>
+
+        <label for="birthYear">Год рождения:</label>
+        <input type="number" id="birthYear" value="1995">
+        
+        <br><br>
+
+        <label for="currentDate">Сегодняшнее число:</label>
+        <input type="date" id="currentDate">
+        
+        <br><br>
+
+        <button type="submit">Отправить</button>
+    </form>
+
+    <div id="report"></div>
+</body>
+</html>
