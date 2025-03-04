@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цифровая подпись</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Цифровая подпись</h1>
+    <form id="subscriptionForm">
+
+        <label for="name">Имя:</label>
+        <input type="text" id="name" required placeholder="Введите Ваше имя">
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" required placeholder="Введите email со знаком @">
+        
+        <label for="message">Сообщение:</label>
+        <textarea id="message" required placeholder="Введите Ваше сообщение"></textarea>
+        
+        <button type="button" id="submitButton">Подписать</button>
+
+    </form>
+
+    <table id="resultTable" class="hidden">
+        <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Email</th>
+                <th>Сообщение</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody> 
+        <!-- tbody нужен для того, чтобы сюда сохранять данные из таблицы -->
+    </table>
+</body>
+</html>
