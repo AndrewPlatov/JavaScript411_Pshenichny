@@ -20,7 +20,7 @@ f = open('school_test.txt', 'w', encoding='utf-8')
 # Генереируем 10 заданий
 for i in range(10):
     num1, num2, correct = generate()
-    user_answer = correct
+    user_answer = int(input(f'{num1} + {num2} = '))
     if user_answer == correct:
         f.write(f'{num1} + {num2} = {user_answer} верно\n')
     else:
