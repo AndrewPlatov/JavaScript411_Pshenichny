@@ -39,12 +39,12 @@ def generate():
         
     return num1, num2, operation, correct
 
-
-f = open('school_test.txt', 'w', encoding='utf-8')
-
 # Очень важно обнулить наш счетчик правильных ответов и указать общее число вопросов
-correct_answers = 0
 total_questions = 20
+correct_answers = 0
+incorrect_questions = []
+    
+f = open('school_test.txt', 'w', encoding='utf-8')
 
 # Генерируем 20 заданий
 for i in range(total_questions):
@@ -57,9 +57,9 @@ for i in range(total_questions):
         
     else:
         f.write(f'{num1} {operation} {num2} = {user_answer} неверно, правильный ответ {correct}\n')
-
+        incorrect_questions.append((num1, num2, operation, correct))
+        
 f.close()
-
 
 print(f"Было задано {total_questions} вопросов, {correct_answers} из них верно.")
 print("Задания созданы и записаны в файл 'school_test.txt'.")
@@ -70,3 +70,23 @@ print("Задания созданы и записаны в файл 'school_tes
 
 # Открыть файл с вопросами на чтение. Задать человеку повторно вопросы, на которые он не смог ответить. 
 # Присоединить к старому файлу новый результат.
+
+if incorrect_questions:
+    print("\nВы ответили неверно на некоторые вопросы. Давайте попробуем их снова.")
+    
+    f = open('school_test.txt', 'a', encoding='utf-8')  # Открываем файл для добавления новых ответов
+
+    for num1, num2, operation, correct in incorrect_questions:
+        user_answer = int(input(f'{num1} {operation} {num2} = '))
+        if user_answer == correct:
+            print(f'Правильно! {num1} {operation} {num2} = {correct}')
+            f.write(f'{num1} {operation} {num2} = {user_answer} верно (повторно проверено)\n')
+        else:
+            print(f'Неправильно. Правильный ответ: {correct}')
+            f.write(f'{num1} {operation} {num2} = {user_answer} неверно, правильный ответ {correct}\n')
+        
+    f.close()  
+    
+print("Тест завершен !")
+
+# --------------------------------------------------------- FINAL --------------------------------------------------------------------------------- #
