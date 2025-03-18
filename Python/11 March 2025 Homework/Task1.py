@@ -36,7 +36,7 @@ end_period = datetime(2023, 1, 9)
 
 # Фильтрация оценок за указанный период
 grades_in_period = {date: grade for date, grade in grades.items() 
-                    if start_period <= date <= end_period}          # Это условие, проверяющее, попадает ли текущая дата date в указанный диапазон между start_period и end_period
+                    if start_period.strftime('%d-%m-%Y') <= date <= end_period.strftime('%d-%m-%Y')}    # Это условие, проверяющее, попадает ли текущая дата date в указанный диапазон между start_period и end_period
 
 # Вывод оценок за указанный период и средней оценки
 print("\nОценки за указанный период (04-09 января):")
