@@ -50,6 +50,8 @@
 
 import random
 
+# НУЖНО НЕ ПУТАТЬ МЕСТАМИ ВОПРОСЫ И ОТВЕТЫ !!!!!!!!!!
+
 from pole_q import question
 
 question, word = random.choice(list(question.items()))
