@@ -9,4 +9,4 @@ class ClothInfo:
         self.amount = amount
         
 cin = ClothInfo()
-print(cin.amount, cin.form, cin.color)
+print(cin.amount, cin.form, cin.color, cin.brand)
