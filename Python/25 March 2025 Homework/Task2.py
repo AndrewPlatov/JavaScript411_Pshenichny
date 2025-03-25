@@ -11,7 +11,8 @@ class CarInfo:
     
 ci = CarInfo()
 print(ci.brand)
+print(ci.model)
 print(ci.color)
 print(ci.engine)
 print(ci.horsepower)
-print(ci.model)
+print(ci.year)
