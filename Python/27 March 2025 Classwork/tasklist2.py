@@ -45,10 +45,6 @@ dress.set_deadline(datetime.now() + timedelta(7))
 print('Новое описание: ', dress.description)
 print('Новый срок: ', dress.deadline)
 
-# Проверка оставшихся дней и часов после изменения дедлайна
-print('Осталось дней до дедлайна: ', dress.days_deadline())
-print('Осталось часов до дедлайна: ', dress.hours_deadline())
-
 # Проверка оставшихся дней и часов
 print('Осталось дней до дедлайна: ', dress.days_deadline())
 print('Осталось часов до дедлайна: ', dress.hours_deadline())
