@@ -25,7 +25,6 @@
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
-# 
 class Year:
     def __init__(self, year):
         self.year = year
@@ -35,7 +34,6 @@ class Year:
         # Проверка на високосный год
         return (self.year % 4 == 0 and self.year % 100 != 0) or (self.year % 400 == 0)
 
-# 
 class Month:
     def __init__(self, name, days):
         self.name = name
@@ -44,7 +42,6 @@ class Month:
     def __str__(self):
         return f"{self.name}: {self.days} дней"
 
-# 
 class Calendar:
     def __init__(self, year):
         self.year = Year(year)
@@ -65,8 +62,7 @@ class Calendar:
                 Month("Сентябрь", 30),
                 Month("Октябрь", 31),
                 Month("Ноябрь", 30),
-                Month("Декабрь", 31),
-                print('Visokosny')
+                Month("Декабрь", 31)
             ]
         else:
             # Создание списка месяцев обычного года
@@ -82,8 +78,7 @@ class Calendar:
                 Month("Сентябрь", 30),
                 Month("Октябрь", 31),
                 Month("Ноябрь", 30),
-                Month("Декабрь", 31),
-                print('NE visokosny')
+                Month("Декабрь", 31)
             ]
 
     def display_calendar(self):
@@ -98,7 +93,6 @@ class Calendar:
             print("Этот год не является високосным.")
 
 
-# Пример использования
 year_input = int(input("Введите год: "))
 calendar = Calendar(year_input)
 calendar.display_calendar()
