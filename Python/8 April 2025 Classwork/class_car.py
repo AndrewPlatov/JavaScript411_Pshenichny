@@ -5,13 +5,31 @@
 
 class Car:
     def __init__(self, brand, year, speed):
-        self.brand = brand
-        self.year = year
-        self.speed = speed  
-        self.distance = 0
+        self.__brand = brand
+        self.__year = year
+        self.__speed = speed  
+        self.__distance = 0
 
-    def set_distance(self, distance):
-        self.distance = distance
+    @property
+    def brand(self):
+        return self.__brand
+
+    @property
+    def year(self):
+        return self.__year
+
+    @property
+    def speed(self):
+        return self.__speed
+
+    @property
+    def distance(self):
+        return self.__distance
+
+    @distance.setter
+    def distance(self, value):
+        self.__distance = value
+
 
     def get_time_to_travel(self):
         if self.speed > 0:
@@ -30,7 +48,7 @@ class Car:
 
 
 car = Car("Tesla", 2022, 120)
-car.set_distance(240)  # Устанавливаем расстояние в 240 км
+car.distance = 240  # Устанавливаем расстояние в 240 км
 
 print(car)
 time_to_travel = car.get_time_to_travel()
