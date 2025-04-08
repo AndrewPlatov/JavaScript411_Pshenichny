@@ -9,6 +9,7 @@ class Car:
         self.__year = year
         self.__speed = speed  
         self.__distance = 0
+        self.__time = 0
 
     @property
     def brand(self):
@@ -30,29 +31,33 @@ class Car:
     def distance(self, value):
         self.__distance = value
 
+    @property
+    def time(self):
+        return self.__time
+    
+    @time.setter
+    def time(self, value):
+        if value >= 0:
+            self.__time = value
+            self.distance = value * self.speed
 
-    def get_time_to_travel(self):
+    @property
+    def time_to_travel(self):
         if self.speed > 0:
-            time = self.distance / self.speed
-            return time
+            return self.distance / self.speed
         else:
             return None
 
-    def set_time_and_distance(self, time):
-        # Изменяем расстояние на основе указанного времени и текущей скорости
-        self.distance = time * self.speed
-
     def __str__(self):
         return (f"Марка: {self.brand}, Год выпуска: {self.year}, "
-                f"Скорость: {self.speed} км/ч, Расстояние: {self.distance} км")
-
+                f"Скорость: {self.speed} км/ч, Расстояние: {self.distance} км, "
+                f"Время в пути: {self.time} часов")
 
 car = Car("Tesla", 2022, 120)
 car.distance = 240  # Устанавливаем расстояние в 240 км
 
 print(car)
-time_to_travel = car.get_time_to_travel()
-print(f"Время в пути: {time_to_travel} часов")
+print(f"Время в пути: {car.time_to_travel} часов")
 
-car.set_time_and_distance(4)  # Указываем время в 4 часа
+car.time = 4  # Указываем время в 4 часа
 print(car)
