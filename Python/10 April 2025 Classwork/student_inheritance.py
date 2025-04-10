@@ -4,18 +4,47 @@
 
 class Human:
     def __init__(self, name):
-        self.name = name
+        self.__name = name  
 
-    def __str__(self):
-        return self.name
+    @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, value):
+        self.__name = value
 
 
 class Student(Human):
     def __init__(self, name, group_number, course, grades):
-        self.name = name
-        self.group_number = group_number
-        self.course = course
-        self.grades = grades
+        self._Human__name = name
+        self.__group_number = group_number
+        self.__course = course
+        self.__grades = grades
+
+    @property
+    def group_number(self):
+        return self.__group_number
+
+    @group_number.setter
+    def group_number(self, value):
+        self.__group_number = value
+
+    @property
+    def course(self):
+        return self.__course
+
+    @course.setter
+    def course(self, value):
+        self.__course = value
+
+    @property
+    def grades(self):
+        return self.__grades
+
+    @grades.setter
+    def grades(self, value):
+        self.__grades = value  
 
     def __str__(self):
         return f"{self.name}, группа {self.group_number}, курс {self.course}, оценки {self.grades}"
