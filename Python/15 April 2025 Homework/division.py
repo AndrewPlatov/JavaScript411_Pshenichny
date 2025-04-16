@@ -2,18 +2,18 @@
 # Вывести "расчёт окончен" и указать количество введенных чисел.
 
 count = 0
+x = int(input("Введите целое число (или 0 для выхода): "))
 
-while True:
+while x != 0:
     try:
-        x = int(input("Введите целое число (или 0 для выхода): "))
-        if x == 0:
-            break
         division = 1 / x
-        print(f"Обратное значение {x}: {division}")
+        print(f" Деление {x}: {division}")
         count += 1
-    except ValueError:
-        print("Ошибка: введите целое число.")
     except ZeroDivisionError:
         print("Ошибка: деление на ноль.")
+        break
+    
+    x = int(input("Введите целое число (или 0 для выхода): "))
 
 print(f"Расчёт окончен. Количество введённых чисел: {count}.")
+
