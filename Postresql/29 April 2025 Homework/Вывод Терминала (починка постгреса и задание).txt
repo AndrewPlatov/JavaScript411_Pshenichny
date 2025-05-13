@@ -1,0 +1,104 @@
+Last login: Tue May 13 13:48:21 on ttys008
+andrewpshenichny@Andrews-MacBook-Pro ~ % psql postgres
+psql: ошибка: подключиться к серверу через сокет "/tmp/.s.PGSQL.5432" не удалось: No such file or directory
+	Сервер действительно работает локально и принимает подключения через этот сокет?
+andrewpshenichny@Andrews-MacBook-Pro ~ % brew services start postgresql@17
+Bootstrap failed: 5: Input/output error
+Try re-running the command as root for richer errors.
+Error: Failure while executing; `/bin/launchctl bootstrap gui/501 /Users/andrewpshenichny/Library/LaunchAgents/homebrew.mxcl.postgresql@17.plist` exited with 5.
+andrewpshenichny@Andrews-MacBook-Pro ~ %                                                                                                                                                                                       
+andrewpshenichny@Andrews-MacBook-Pro ~ % rm /opt/homebrew/var/postgres/postmaster.pid
+rm: /opt/homebrew/var/postgres/postmaster.pid: No such file or directory
+andrewpshenichny@Andrews-MacBook-Pro ~ % rm /opt/homebrew/var/postgres/postmaster.pid
+brew services restart postgresql
+rm: /opt/homebrew/var/postgres/postmaster.pid: No such file or directory
+Error: Formula `postgresql@14` is not installed.
+andrewpshenichny@Andrews-MacBook-Pro ~ % rm /opt/homebrew/var/postgres/postmaster.pid
+brew services restart postgresql@17
+rm: /opt/homebrew/var/postgres/postmaster.pid: No such file or directory
+Stopping `postgresql@17`... (might take a while)
+==> Successfully stopped `postgresql@17` (label: homebrew.mxcl.postgresql@17)
+==> Successfully started `postgresql@17` (label: homebrew.mxcl.postgresql@17)
+andrewpshenichny@Andrews-MacBook-Pro ~ % brew services start postgresql@17
+Bootstrap failed: 5: Input/output error
+Try re-running the command as root for richer errors.
+Error: Failure while executing; `/bin/launchctl bootstrap gui/501 /Users/andrewpshenichny/Library/LaunchAgents/homebrew.mxcl.postgresql@17.plist` exited with 5.
+andrewpshenichny@Andrews-MacBook-Pro ~ % rm /opt/homebrew/var/postgres/postmaster.pid
+brew services restart postgresql@17
+rm: /opt/homebrew/var/postgres/postmaster.pid: No such file or directory
+Stopping `postgresql@17`... (might take a while)
+==> Successfully stopped `postgresql@17` (label: homebrew.mxcl.postgresql@17)
+==> Successfully started `postgresql@17` (label: homebrew.mxcl.postgresql@17)
+andrewpshenichny@Andrews-MacBook-Pro ~ % psql postgres
+psql: ошибка: подключиться к серверу через сокет "/tmp/.s.PGSQL.5432" не удалось: No such file or directory
+	Сервер действительно работает локально и принимает подключения через этот сокет?
+andrewpshenichny@Andrews-MacBook-Pro ~ % rm /opt/homebrew/var/postgres/postmaster.pid
+brew services restart postgresql
+rm: /opt/homebrew/var/postgres/postmaster.pid: No such file or directory
+Error: Formula `postgresql@14` is not installed.
+andrewpshenichny@Andrews-MacBook-Pro ~ % rm /opt/homebrew/var/postgres@17/postmaster.pid
+brew services restart postgresql@17
+rm: /opt/homebrew/var/postgres@17/postmaster.pid: No such file or directory
+Stopping `postgresql@17`... (might take a while)
+==> Successfully stopped `postgresql@17` (label: homebrew.mxcl.postgresql@17)
+==> Successfully started `postgresql@17` (label: homebrew.mxcl.postgresql@17)
+andrewpshenichny@Andrews-MacBook-Pro ~ % psql postgres
+psql: ошибка: подключиться к серверу через сокет "/tmp/.s.PGSQL.5432" не удалось: No such file or directory
+	Сервер действительно работает локально и принимает подключения через этот сокет?
+andrewpshenichny@Andrews-MacBook-Pro ~ % brew services stop postgresql
+rm /opt/homebrew/var/postgresql@17/postmaster.pid
+brew services start postgresql
+Warning: Service `postgresql@14` is not started.
+Error: Formula `postgresql@14` is not installed.
+andrewpshenichny@Andrews-MacBook-Pro ~ % rm /opt/homebrew/var/postgresql@17/postmaster.pid
+brew services start postgresql@17
+Service `postgresql@17` already started, use `brew services restart postgresql@17` to restart.
+andrewpshenichny@Andrews-MacBook-Pro ~ % brew services restart postgresql@17
+Stopping `postgresql@17`... (might take a while)
+==> Successfully stopped `postgresql@17` (label: homebrew.mxcl.postgresql@17)
+==> Successfully started `postgresql@17` (label: homebrew.mxcl.postgresql@17)
+andrewpshenichny@Andrews-MacBook-Pro ~ % psql postgres
+psql (17.4 (Homebrew))
+Введите "help", чтобы получить справку.
+
+postgres=# \c students
+Вы подключены к базе данных "students" как пользователь "andrewpshenichny".
+students=# CREATE TABLE categories (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+CREATE TABLE
+students=# CREATE TABLE activities (
+    id SERIAL PRIMARY KEY,
+    category_id INTEGER REFERENCES categories(id),
+    start_time TIMESTAMP NOT NULL,
+    end_time TIMESTAMP NOT NULL
+);
+CREATE TABLE
+students=# CREATE TABLE sleep_periods (
+    id SERIAL PRIMARY KEY,
+    start_time TIMESTAMP NOT NULL,
+    end_time TIMESTAMP NOT NULL
+);
+CREATE TABLE
+students=# INSERT INTO categories (name) VALUES ('Работа'), ('Учёба'), ('Отдых');
+
+INSERT INTO activities (category_id, start_time, end_time) VALUES
+(1, '2024-04-25 09:00:00', '2024-04-25 11:00:00'),
+(2, '2024-04-25 12:00:00', '2024-04-25 14:30:00'),
+(3, '2024-04-25 15:00:00', '2024-04-25 16:00:00');
+
+INSERT INTO sleep_periods (start_time, end_time) VALUES
+('2024-04-25 23:00:00', '2024-04-26 07:00:00');
+INSERT 0 3
+INSERT 0 3
+INSERT 0 1
+students=# select * from activities;
+ id | category_id |     start_time      |      end_time       
+----+-------------+---------------------+---------------------
+  1 |           1 | 2024-04-25 09:00:00 | 2024-04-25 11:00:00
+  2 |           2 | 2024-04-25 12:00:00 | 2024-04-25 14:30:00
+  3 |           3 | 2024-04-25 15:00:00 | 2024-04-25 16:00:00
+(3 строки)
+
+students=# 
